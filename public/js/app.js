@@ -83,8 +83,8 @@ app.config(['$routeProvider',
             when('/membership.html', {
                 templateUrl: 'membership.html'
             }).
-            when('/spelregels.html', {
-                templateUrl: 'spelregels.html'
+            when('/rules.html', {
+                templateUrl: 'rules.html'
             }).
             when('/contact.html', {
                 templateUrl: 'contact.html'
