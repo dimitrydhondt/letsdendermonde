@@ -1,0 +1,28 @@
+{
+  "name": "elasjs",
+  "version": "0.1.0",
+  "description": "MEAN implementation of the public website of LETS Dendermonde.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "~4.9.x",
+    "body-parser": "~1.9.0",
+    "cron": "~1.0.0",
+    "needle": "~0.7.10"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dimitrydhondt/letsdendermonde"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="groupApp" ng-controller="groupController" >
+<head>
+    <meta charset="utf-8">
+    <!-- Title here -->
+    <title>LETS Dendermonde</title>
+    <!-- Description, Keywords and Author -->
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your,Keywords">
+    <meta name="author" content="ResponsiveWebInc">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styles -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/flexslider.css" rel="stylesheet">
+    <link href="/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/lets-3.css" rel="stylesheet">
+
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+
+<body class="ng-cloak" ng-cloack>
+<!-- Header starts -->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <div class="logo">
+<!--                    <a href="#/"><img src="/img/LV_handjes_bollen.png" class="img-responsive"></a>-->
+                    <a href="#/"><img src="/img/LV_bollen_mettekst_horizontaal.png" class="img-responsive"></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="list">
+                    <!-- Add your email id here -->
+                    <div class="email">
+                        <i class="fa fa-envelope-o"></i> Email: <a href="mailto:letsdendermonde@gmail.com">letsdendermonde@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <h1><a href="#/">Regio Dendermonde</a></h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Header ends -->
+
+<!-- Navigation Starts -->
+<!-- Note down the syntax before editing. It is the default twitter bootstrap navigation -->
+<div class="navbar bs-docs-nav" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <!-- Navigation links starts here -->
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home </a></li>
+                <li><a href="#/calendar.html">Agenda </a></li>
+                <li><a href="#/contact.html">Contact </a></li>
+                <li><a href="/elas">Elas-NG </a></li>
+                <!--
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Contact <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/contact">Contact</a></li>
+                    </ul>
+                </li>
+                -->
+            </ul>
+        </nav>
+    </div>
+</div>
+<!--/ Navigation Ends -->
+
+
+<!-- Content strats -->
+
+<div class="content">
+    <div class="container" ng-view>
+    </div>
+</div>
+
+<!-- Content ends -->
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Widget 1 -->
+                <div class="widget">
+                    <h4>Over LETS Regio Dendermonde</h4>
+
+                    <p>
+                        LETS Dendermonde ...
+                    </p>
+                    <!-- Social Media -->
+                    <p>
+                        <span class="social"><a href="https://www.facebook.com/pages/LETS-Regio-Dendermonde/113915938675095?fref=ts" target="_blank"><i class="fa fa-facebook facebook"></i> Leuk ons op facebook</a></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12"><p class="copy pull-left">
+                Copyright &copy; <a href="#">LETS Regio Dendermonde</a></p></div>
+        </div>
+    </div>
+</footer>
+<!--/ Footer -->
+
+<script src="/bowerjs/jquery.min.js"></script>
+<script src="/bowerjs/jquery-ui.min.js"></script>
+<script src="/bowerjs/bootstrap.min.js"></script>
+<script src="/bowerjs/jquery.flexslider-min.js"></script>
+<script src="/bowerjs/angular.min.js"></script>
+<script src="/bowerjs/angular-route.min.js"></script>
+<script src="/bowerjs/angular-flexslider.js"></script>
+<script src="/bowerjs/moment-with-locales.min.js"></script>
+<script src="js/letsgroups.js"></script>
+
+</body>
+</html>
