@@ -26,19 +26,35 @@ app.controller('groupController', function ($scope) {
 app.controller('calendarController', function ($scope, $http) {
     //https://www.google.com/calendar/ical/01i2d6ret8gq1j24or8urnv7oc%40group.calendar.google.com/public/basic.ics
     //https://www.google.com/calendar/ical/feestdagenbelgie%40gmail.com/public/basic.ics
-    $http.get("https://www.google.com/calendar/feeds/feestdagenbelgie%40gmail.com/public/full?orderby=starttime&sortorder=ascending&futureevents=true&alt=json").success(function(cal) {
+    /*$http.get("https://www.google.com/calendar/feeds/feestdagenbelgie%40gmail.com/public/full?orderby=starttime&sortorder=ascending&futureevents=true&alt=json").success(function(cal) {
         $scope.events = [];
         angular.forEach(cal.feed.entry, function(value, key) {
             $scope.events.push({title : value.title.$t, content : value.content.$t, date : value.gd$when[0].startTime });
         });
         console.log($scope.events);
+    });*/
+    $http.get("https://www.googleapis.com/calendar/v3/calendars/iggn8qunmnur6c1j3qapm185co@group.calendar.google.com/events?key=AIzaSyDxQxGyQhNRtzNFEi-vANftQ6ilYfqlMyw", {cache: true}).success(function(cal) {
+        $scope.events = [];
+        var events = [];
+        angular.forEach(cal.items, function(value, key) {
+            events.push({title : value.summary, content : value.description, date : value.start.dateTime });
+        });
+        var sortByDate = function(a,b) {
+            if(a.date < b.date) {
+                return 1;
+            } else if(a.date > b.date) {
+                return -1;
+            } else return 0;
+        }
+        events.sort(sortByDate);
+        $scope.events = events;
     });
 });
 
 app.controller('facebookController', function ($scope, $http) {
-    var profileid = "649689358450200"; // EVA Dendermonde profile id.
-    var appid = "1526197424288290"; // facebook app, only used to read public page.
-    var appsecret = "ee4c2c5eee5508f99b9c3e16c7d7ef34"; // secret for this app. publicly exposed, so don't re-use.
+    var profileid = "113915938675095"; // LETS Dendermonde profile id.
+    var appid = "935739103103651"; // facebook app, only used to read public page.
+    var appsecret = "755102d97e6db970333103de2ab68583"; // secret for this app. publicly exposed, so don't re-use.
 
     $http.get("https://graph.facebook.com/oauth/access_token?grant_type=client_credentials&client_id=" + appid + "&client_secret=" + appsecret).success(function(authtoken) {
         $http.get("https://graph.facebook.com/"+profileid+"/feed?" + authtoken).success(function(feed) {
@@ -61,6 +77,15 @@ app.controller('facebookController', function ($scope, $http) {
 app.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
+            when('/lets.html', {
+                templateUrl: 'lets.html'
+            }).
+            when('/membership.html', {
+                templateUrl: 'membership.html'
+            }).
+            when('/spelregels.html', {
+                templateUrl: 'spelregels.html'
+            }).
             when('/contact.html', {
                 templateUrl: 'contact.html'
             }).

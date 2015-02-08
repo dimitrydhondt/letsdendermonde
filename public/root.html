@@ -25,8 +25,16 @@
                     <!-- Service #1 -->
                     <div class="service">
                         <!-- Icon & title. Font Awesome icon used. -->
-                        <h5><span><i class="fa fa-gift"></i> Web Designing</span></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nisi vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis. </p>
+                        <h5><span><i class="fa fa-info"></i> Wat Is LETS ?</span></h5>
+                        <p>
+                            LETS is een duurzaam en modern sociaal netwerk boordevol talenten, je geeft wat je kunt en krijgt wat je nodig hebt, en leert daarbovenop een pak leuke mensen kennen !
+                        </p>
+                        <p>
+                            Om het netwerk in evenwicht te houden gebruikt LETS een lokale gemeenschapsmunt.
+                        </p>
+                        <p>
+                            <a href="#/lets.html">Meer informatie over LETS.</a>
+                        </p>
                     </div>
 
                 </div>
@@ -35,8 +43,10 @@
                     <!-- Service #2 -->
                     <div class="service">
                         <!-- Icon & title. Font Awesome icon used. -->
-                        <h5><span><i class="fa fa-cloud"></i> Web Development</span></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nisi vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis. </p>
+                        <h5><span><i class="fa fa-envelope"></i> Blijf op de hoogte !</span></h5>
+                        <p>
+                            Wil je op de hoogte blijven van activiteiten en infomomenten rond LETS ? <a href="#/contact.html">Schrijf je dan in op onze nieuwsbrief !</a>
+                        </p>
                     </div>
 
                 </div>
@@ -45,86 +55,53 @@
                     <!-- Service #3 -->
                     <div class="service">
                         <!-- Icon & title. Font Awesome icon used. -->
-                        <h5><span><i class="fa fa-home"></i> WordPress Customization</span></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nisi vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis. </p>
+                        <h5><span><i class="fa fa-pencil"></i> Lid worden</span></h5>
+                        <p>Je bent helemaal overtuigd, en wil lid worden van LETS Regio Dendermonde ? Geweldig !</p>
+                        <p>Vul dan <a href="#/membership.html">dit formulier in.</a></p>
                     </div>
 
                 </div>
             </div>
         </div>
 
-        <!-- Serivce ends -->
+        <!-- Service ends -->
 
-        <!-- CTA starts -->
-
-        <div class="cta">
-            <div class="row">
-                <div class="col-md-9">
-                    <!-- First line -->
-                    <p class="cbig">Lorem ipsum consectetur dolor sit amet, consectetur adipiscing.</p>
-                    <!-- Second line -->
-                    <p class="csmall">Duis vulputate consectetur malesuada eros nec odio consect eturegestas et netus et in dictum nisi vehicula.</p>
-                </div>
-                <div class="col-md-2">
-                    <!-- Button -->
-                    <div class="button"><a href="#">Get A Free Trail</a></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- CTA Ends -->
+        <p class="text-center">
+            <iframe width="280" height="157" src="https://www.youtube.com/embed/DQMMaYjX_pA" frameborder="0" allowfullscreen></iframe>
+            <iframe width="280" height="157" src="https://www.youtube.com/embed/8QX8LWoDTzg" frameborder="0" allowfullscreen></iframe>
+        </p>
 
         <!-- Recent post starts. Note down the class name before editing. -->
 
         <div class="rposts">
-            <h4>Recent Posts</h4>
-            <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="rpost1">
-                        <div class="rimg">
-                            <img src="img/photos/r1.jpg" alt="" class="img-responsive" />
-                        </div>
-                        <!-- Title & Para -->
-                        <div class="rdetails">
-                            <h5>Lorem ipsum</h5>
-                            <p>Duis vulputate consectetur malesuada et in dictum nisi vehicula.</p>
+            <h4>Recente Berichten</h4>
+            <div class="blog" ng-repeat="post in posts">
+                <div ng-show="(post.type == 'status' || post.type == 'link' || (post.type == 'photo') && post.status_type == 'shared_story'" class="entry">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="meta">
+                                <i class="fa fa-calendar"></i> {{post.created_time | date:'dd-MM-yyyy'}}
+                                <span ng-show="post.likes.data.length > 0" class="pull-right"><i class="fa fa-thumbs-up"></i> {{post.likes.data.length}} Likes</span>
+                            </div>
+
+                            <p>{{post.message}}</p>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="rpost1">
-                        <div class="rimg">
-                            <img src="img/photos/r2.jpg" alt="" class="img-responsive" />
+                    <div class="row">
+                        <div class="col-md-2 col-xs-4">
+                            <span ng-show="post.picture">
+                                <a ng-href="{{post.link}}" target="_blank">
+                                    <img ng-show="{{post.picture}}" ng-src="{{post.picture}}" class="img-responsive">
+                                </a>
+                            </span>
                         </div>
-                        <div class="rdetails">
-                            <h5>Lorem ipsum</h5>
-                            <p>Duis vulputate consectetur malesuada et netus et in dictum nisi vehicula.</p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="rpost1">
-                        <div class="rimg">
-                            <img src="img/photos/r3.jpg" alt="" class="img-responsive" />
-                        </div>
-                        <div class="rdetails">
-                            <h5>Lorem ipsum</h5>
-                            <p>Duis vulputate consectetur malesuada et in dictum nisi vehicula.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="rpost1">
-                        <div class="rimg">
-                            <img src="img/photos/r4.jpg" alt="" class="img-responsive" />
-                        </div>
-                        <div class="rdetails">
-                            <h5>Lorem ipsum</h5>
-                            <p>Duis vulputate consectetur malesuada et netus et in dictum nisi vehicula.</p>
+                        <div class="col-md-10 col-xs-8">
+                            <h4 ng-show="{{post.caption}}">
+                                <a href="{{post.link}}" target="_blank">{{post.caption}}</a>
+                            </h4>
+                            <p>{{post.description}}</p>
+                            <p><a ng-show="{{post.link}}" href="{{post.link}}" target="_blank">Meer informatie...</a></p>
                         </div>
                     </div>
                 </div>
@@ -133,9 +110,8 @@
 
         <!-- Recent post ends -->
 
-
         <!-- Clients starts -->
-
+<!--
         <div class="row">
             <div class="col-md-12">
                 <div class="clients">
@@ -148,7 +124,7 @@
                 </div>
             </div>
         </div>
-
+-->
         <!-- Clients ends -->
 
     </div>
